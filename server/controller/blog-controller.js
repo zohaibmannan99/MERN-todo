@@ -14,7 +14,7 @@ const fetchListofBlogs = async(req,res)=>{
     }catch(e){
         console.log(e);
     }
-    if(!blodList){
+    if(!blogList){
         return res.status(404).json({message : 'No Blogs Found'})
     }
 
@@ -51,7 +51,7 @@ const addNewBlog = async(req,res) =>{
     return res.status(200).json({newlyCreatedBlog});
 };
 
-const deleteBLog = async(req,res) =>{
+const deleteBlog = async(req,res) =>{
     const id = req.params.id;
 
     try{
@@ -90,6 +90,6 @@ const updateBlog = async(req,res)=>{
     return res.send(200).json(currentBlogToUpdate);
 };
 
-module.exports = {fetchListofBlogs, deleteBLog, updateBlog, addNewBlog};
+module.exports = {fetchListofBlogs, deleteBlog, updateBlog, addNewBlog};
 
 
